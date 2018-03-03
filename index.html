@@ -358,12 +358,11 @@
 
       
         
-          
-          Python编程快速上手-让繁琐的工作自动化1.关于 sys.argv[ ] 的用法解释
-看了博客里写的，很清楚
-
-&emsp;&emsp;sys.argv[ ]说白了就是一个从程序外部获取参数的桥梁，这个“外部”很关键，所以那些试图从代码来说明它作用的解释一直没看明白。因为我们从外部取得的参数可以
-          ...
+          <h2 id="Python编程快速上手-让繁琐的工作自动化"><a href="#Python编程快速上手-让繁琐的工作自动化" class="headerlink" title="Python编程快速上手-让繁琐的工作自动化"></a>Python编程快速上手-让繁琐的工作自动化</h2><h3 id="1-关于-sys-argv-的用法解释"><a href="#1-关于-sys-argv-的用法解释" class="headerlink" title="1.关于 sys.argv[ ] 的用法解释"></a>1.关于 sys.argv[ ] 的用法解释</h3><blockquote>
+<p>看了<a href="https://www.cnblogs.com/aland-1415/p/6613449.html" target="_blank" rel="noopener">博客</a>里写的，很清楚</p>
+</blockquote>
+<p>&emsp;&emsp;sys.argv[ ]说白了就是一个从程序外部获取参数的桥梁，这个“外部”很关键，所以那些试图从代码来说明它作用的解释一直没看明白。因为我们从外部取得的参数可以是多个，所以获得的是一个列表（list)，也就是说sys.argv其实可以看作是一个列表，所以才能用[]提取其中的元素。其第一个元素是程序本身，随后才依次是外部给予的参数。</p>
+<p>&emsp;&emsp;sys.argv[ ]其实就是一个列表，里边的项为用户输入的参数，关键就是要明白这参数是从程序外部输入的，而非代码本身的什么地方，要想看到它的效果就应该将程序保存了，从外部来运行程序并给出参数。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/03/python-note/#more" rel="contents">

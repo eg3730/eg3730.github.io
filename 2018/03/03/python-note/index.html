@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Lost and Found">
 <meta property="og:description" content="Python编程快速上手-让繁琐的工作自动化1.关于 sys.argv[ ] 的用法解释 看了博客里写的，很清楚  &amp;emsp;&amp;emsp;sys.argv[ ]说白了就是一个从程序外部获取参数的桥梁，这个“外部”很关键，所以那些试图从代码来说明它作用的解释一直没看明白。因为我们从外部取得的参数可以是多个，所以获得的是一个列表（list)，也就是说sys.argv其实可以看作是一个列表，所以才能用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T09:07:35.245Z">
+<meta property="og:updated_time" content="2018-03-03T09:19:27.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 学习过程中的一些不懂知识的记录">
 <meta name="twitter:description" content="Python编程快速上手-让繁琐的工作自动化1.关于 sys.argv[ ] 的用法解释 看了博客里写的，很清楚  &amp;emsp;&amp;emsp;sys.argv[ ]说白了就是一个从程序外部获取参数的桥梁，这个“外部”很关键，所以那些试图从代码来说明它作用的解释一直没看明白。因为我们从外部取得的参数可以是多个，所以获得的是一个列表（list)，也就是说sys.argv其实可以看作是一个列表，所以才能用">
@@ -362,8 +362,7 @@
 <p>看了<a href="https://www.cnblogs.com/aland-1415/p/6613449.html" target="_blank" rel="noopener">博客</a>里写的，很清楚</p>
 </blockquote>
 <p>&emsp;&emsp;sys.argv[ ]说白了就是一个从程序外部获取参数的桥梁，这个“外部”很关键，所以那些试图从代码来说明它作用的解释一直没看明白。因为我们从外部取得的参数可以是多个，所以获得的是一个列表（list)，也就是说sys.argv其实可以看作是一个列表，所以才能用[]提取其中的元素。其第一个元素是程序本身，随后才依次是外部给予的参数。</p>
-<p>&emsp;&emsp;sys.argv[ ]其实就是一个列表，里边的项为用户输入的参数，关键就是要明白这参数是从程序外部输入的，而非代码本身的什么地方，要想看到它的效果就应该将程序保存了，从外部来运行程序并给出参数。</p>
-<p><code>sys.argv[0]</code>表示代码本身文件路径，<code>sys.argv[1]</code>表示输入的第一个参数，以此类推。</p>
+<p>&emsp;&emsp;sys.argv[ ]其实就是一个列表，里边的项为用户输入的参数，关键就是要明白这参数是从程序外部输入的，而非代码本身的什么地方，要想看到它的效果就应该将程序保存了，从外部来运行程序并给出参数。<br><a id="more"></a><br><code>sys.argv[0]</code>表示代码本身文件路径，<code>sys.argv[1]</code>表示输入的第一个参数，以此类推。</p>
 <p>在看书上第6章有一个例子<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">PASSWORDS = &#123;<span class="string">'email'</span>: <span class="string">'abcdefg'</span>,</span><br><span class="line">             <span class="string">'blog'</span>: <span class="string">'dhsjahj'</span>,</span><br><span class="line">             <span class="string">'luggage'</span>: <span class="string">'12345'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> pyperclip</span><br><span class="line"><span class="keyword">if</span> len(sys.argv) &lt; <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">'Usage: py pe.py [account] - copy account password'</span>)</span><br><span class="line">    sys.exit()</span><br><span class="line">account = sys.argv[<span class="number">1</span>]  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> account <span class="keyword">in</span> PASSWORDS:</span><br><span class="line">    pyperclip.copy(password[account])</span><br><span class="line">    print(<span class="string">'Password for '</span> + account + <span class="string">' copied to clipboard.'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'There is no account named '</span> + account)</span><br></pre></td></tr></table></figure></p>
 <p>程序应该是在外部运行输入类似 <code>py pe.py email</code> 就可以把value复制到剪贴板上。</p>
 
